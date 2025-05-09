@@ -1,10 +1,23 @@
 import React from 'react'
+import { useRoutes } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
+import { routes } from './routes.jsx'
 
 export const App = () => {
+
+  let element = useRoutes(routes)
+
+
   return (
     <div>
-      <h1>My React App</h1>
-      <p>This is a simple React application.</p>
+      {element}
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={{
+          duration: 3000,
+        }}
+      />
     </div>
   )
 }

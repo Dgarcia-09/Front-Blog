@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'VT323', monospace; 
+  background-color: transparent;
+}
+
+.dashboard-container {
+  font-family: 'VT323', monospace;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #14171a;
+  background-image: url(../../assets/img/tumblr_bd7ff5717907ad246da3e1c60d7281bc_23f11550_2048.gif);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #0b0b0b;
+  padding: 20px;
+  color: #e1e7eb;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.titulo-principal {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: normal;
+  font-family: 'VT323', monospace;
+}
+
+
+.navbar {
+  background-color: rgba(10, 10, 10, 0.8);
+  padding: 10px 25px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 8px;
+
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: 'VT323', monospace;
+  color: #fcfffd;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar li:hover {
+  color: rgb(235, 238, 235);
+  border: 1px solid rgb(239, 245, 239);
+  background-color: rgba(0, 255, 102, 0.1);
+  box-shadow: 0 0 5px #ffffff;
+}
