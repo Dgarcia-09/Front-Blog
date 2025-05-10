@@ -56,3 +56,31 @@
   color: #ffff0c;
   margin-top: 10px;
 }
+
+.publicaciones-container select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: 'VT323', monospace;
+  border: 1px solid #00ff80;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  background-color: rgba(10, 10, 10, 0.9);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.publicaciones-container select option {
+  background-color: rgba(10, 10, 10, 0.9);
+  color: #ffffff;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 1px solid #00ff80;
+  border-radius: 6px;
+}
+
+.publicaciones-container select:focus {
+  outline: none;
+  border-color: #00ff80;
+  box-shadow: 0 0 5px #00ff80;
+}
