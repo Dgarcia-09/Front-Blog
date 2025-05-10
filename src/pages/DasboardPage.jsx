@@ -1,6 +1,6 @@
 import React from "react";
-import { Navbar } from "../../components/navBar/Navbar.jsx";
-import "./dashboardPage.css";
+import { Navbar } from "../components/Navbar.jsx";
+import "../assets/styles/dashboardPage.css"
 
 export const DashboardPage = () => {
     return (
@@ -11,9 +11,6 @@ export const DashboardPage = () => {
             </header>
 
             <main className="contenido">
-                <div className="contenido-izquierdo">
-                    {}
-                </div>
             </main>
         </div>
     );

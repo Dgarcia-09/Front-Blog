@@ -29,19 +29,6 @@ export const obtenerComentarios = async (id) => {
     }
 }
  
-export const crearPublicacion = async (data) =>  {
-    try{
-        return await apiBlog.post(`/publicacion/crear`)
- 
-    }catch(error){
-        return{
-            error: true,
-            message: error.message
-        }
-    }
-}
- 
- 
 export const listarPublicaciones = async () => {
     try{
         return await apiBlog.get(`/publicacion/listar`)
