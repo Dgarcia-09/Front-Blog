@@ -6,9 +6,9 @@ const apiBlog = axios.create({
     httpAgent: false
 })
  
-export const crearComentario = async (id) => {
+export const crearComentario = async (id, data) => {
     try{
-        return await apiBlog.post(`/comentario/crear/${id}`)
+        return await apiBlog.post(`/comentario/crear/${id}`, data)
     }catch(error){
         return{
             error: true,

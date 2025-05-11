@@ -65,3 +65,55 @@
   text-align: center;
   margin-top: 30px;
 }
+
+.form-comentario {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgba(20, 20, 20, 0.85);
+  padding: 20px;
+  font-family: 'VT323', monospace;
+}
+
+.form-comentario input,
+.form-comentario textarea {
+  padding: 0.8rem;
+  border-radius: 0;
+  border: 1px solid #fbfbfb;
+  background-color: #0a0a0a;
+  color: #e1e7eb;
+  font-size: 1.3rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-comentario input::placeholder,
+.form-comentario textarea::placeholder {
+  color: #f9fffd;
+}
+
+.form-comentario button {
+  padding: 0.8rem;
+  background-color: #ffff00;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: inherit;
+}
+
+.form-comentario button:hover {
+  background-color: #0aff95;
+  box-shadow: 0 0 6px #00ff80;
+}
+
+.mensaje {
+  margin-top: 1rem;
+  color: #32ff9c;
+  font-size: 1.3rem;
+  font-family: 'VT323', monospace;
+}

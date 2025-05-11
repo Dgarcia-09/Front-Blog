@@ -1,16 +1,43 @@
-import { useParams } from 'react-router-dom';
-import { useObtenerComentarios } from '../shared/hooks/useObtenerComentarios'; 
-import { Navbar } from './Navbar';
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { useObtenerComentarios } from "../shared/hooks/useObtenerComentarios";
+import { crearComentario } from "../services/api";
+import { Navbar } from "./Navbar";
 import "../assets/styles/publicacionDetalle.css";
 
 export const PublicacionDetalle = () => {
   const { id } = useParams();
   const { comentarios, loading, error } = useObtenerComentarios(id);
 
-  if (loading) return <div className="loading">Cargando comentarios...</div>;
-  if (error) return <div className="error">Error: {error}</div>;
+  const [nuevoComentario, setNuevoComentario] = useState({
+    userName: "",
+    comentario: ""
+  });
+  const [mensaje, setMensaje] = useState(null);
 
-   return (
+  const handleChange = (e) => {
+    setNuevoComentario({
+      ...nuevoComentario,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await crearComentario(id, nuevoComentario);
+      if (response?.data?.success) {
+        setNuevoComentario({ userName: "", comentario: "" });
+        window.location.reload(); 
+      } else {
+        setMensaje("No se pudo crear el comentario.");
+      }
+    } catch (err) {
+      setMensaje("Ocurrió un error: " + err.message);
+    }
+  };
+
+  return (
     <div className="dashboard-container">
       <header className="header">
         <h1 className="titulo-principal">Blog de Aprendizaje</h1>
@@ -43,10 +70,29 @@ export const PublicacionDetalle = () => {
               )}
             </>
           )}
+
+          <form onSubmit={handleSubmit} className="form-comentario">
+            <h3>Agrega un comentario</h3>
+            <input
+              type="text"
+              name="userName"
+              placeholder="Username"
+              value={nuevoComentario.userName}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="comentario"
+              placeholder="Escribe tu comentario"
+              value={nuevoComentario.comentario}
+              onChange={handleChange}
+              required
+            ></textarea>
+            <button type="submit">Publicar comentario</button>
+            {mensaje && <p className="mensaje">{mensaje}</p>}
+          </form>
         </div>
       </main>
     </div>
   );
 };
-
-
